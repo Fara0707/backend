@@ -1,0 +1,74 @@
+
+<html>
+<body>
+    <div>
+        <form method="post"  action="addGroup">
+            <input type="text" name="groupName" placeholder="Номер группы">
+            <button type="submit">Добавить группу</button>
+        </form>
+    </div>
+
+    <div>
+        <form method="post" action="deleteGroup">
+        <input type="number" name="group_id" placeholder="ID группы">
+        <button type="submit">Удалить группу</button>
+        </form>
+    </div>
+
+    <div>
+        <form method="post" action="renameGroup">
+            <input type="text" name="groupNameOld" placeholder="Текушее имя группы">
+            <input type="text" name="groupNameNew" placeholder="Новое имя группы">
+            <button type="submit">Переименовать группу</button>
+        </form>
+    </div>
+
+
+
+    <div>
+         <form method="post" action="addStudent">
+            <input type="text" name="name" placeholder="Имя студента">
+            <input type="text" name="groupName" placeholder="Имя группы">
+            <button type="submit">Добавить студента</button>
+        </form>
+    </div>
+
+    <div>
+        <form method="post" action="deleteStudent">
+            <input type="number" name="id" placeholder="ID студента">
+            <button type="submit">Удалить студента</button>
+        </form>
+    </div>
+
+    <div>
+        <form method="post" action="renameStudent">
+            <input type="number" name="id" placeholder="ID студента">
+            <input type="text" name="name" placeholder="Новое имя Студента">
+            <button type="submit">Переименовать студента</button>
+        </form>
+    </div>
+
+    <div>Список студентов</div>
+    {{#Students}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{name}}</span>
+    </div>
+    {{/Students}}
+    <div>Список групп</div>
+    {{#UniversityGroups}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{groupName}}</span>
+    </div>
+    {{/UniversityGroups}}
+    <div>Список студентов и их групп</div>
+    {{#Students}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{name}}</span>
+        <span>{{Group_id.groupName}}</span>
+    </div>
+    {{/Students}}
+</body>
+</html>
